@@ -9,6 +9,7 @@ import (
 // RegisterAPIEndpoints initializes API Endpoints
 func RegisterAPIEndpoints() {
 	http.HandleFunc("/headers", renderHeaders)
+	http.HandleFunc("/body", renderBody)
 }
 
 // Run starts up a HTTP server
