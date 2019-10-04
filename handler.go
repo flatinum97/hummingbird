@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"log"
+	"net"
 	"net/http"
 )
 
@@ -22,4 +23,11 @@ func renderBody(w http.ResponseWriter, r *http.Request) {
 	body := b.String()
 	fmt.Fprintf(w, body)
 }
+
+func renderRemoteAddr(w http.ResponseWriter, r *http.Request) {
+	remote_ip, _, err := net.SplitHostPort(r.RemoteAddr)
+	if err != nil {
+		log.Printf("Remote addr %s is invalid format. Expect <IP>:<PORT>\n", r.RemoteAddr)
+	}
+	fmt.Fprintf(w, remote_ip)
 }

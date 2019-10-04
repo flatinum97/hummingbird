@@ -10,6 +10,7 @@ import (
 func RegisterAPIEndpoints() {
 	http.HandleFunc("/headers", renderHeaders)
 	http.HandleFunc("/body", renderBody)
+	http.HandleFunc("/remote_addr", renderRemoteAddr)
 }
 
 // Run starts up a HTTP server
