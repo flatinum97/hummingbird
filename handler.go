@@ -44,5 +44,5 @@ func renderRemoteAddr(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Printf("Remote addr %s is invalid format. Expect <IP>:<PORT>\n", r.RemoteAddr)
 	}
-	fmt.Fprintf(w, remote_ip)
+	fmt.Fprintf(w, "%s\n", remote_ip)
 }
