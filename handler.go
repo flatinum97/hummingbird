@@ -8,6 +8,15 @@ import (
 	"net/http"
 )
 
+func renderFullyRequestDetails(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "[Header]\n")
+	renderHeaders(w, r)
+	fmt.Fprintf(w, "[Body]\n")
+	renderBody(w, r)
+	fmt.Fprintf(w, "[Remote address]\n")
+	renderRemoteAddr(w, r)
+}
+
 func renderHeaders(w http.ResponseWriter, r *http.Request) {
 	for k := range r.Header {
 		v := http.Header.Get(r.Header, k)

@@ -8,6 +8,7 @@ import (
 
 // RegisterAPIEndpoints initializes API Endpoints
 func RegisterAPIEndpoints() {
+	http.HandleFunc("/", renderFullyRequestDetails)
 	http.HandleFunc("/headers", renderHeaders)
 	http.HandleFunc("/body", renderBody)
 	http.HandleFunc("/remote_addr", renderRemoteAddr)
