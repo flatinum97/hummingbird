@@ -9,8 +9,8 @@ import (
 )
 
 func renderFullyRequestDetails(w http.ResponseWriter, r *http.Request) {
-        fmt.Fprintf(w, "[Method]\n")
-        renderRequestMethod(w, r)
+	fmt.Fprintf(w, "[Method]\n")
+	renderRequestMethod(w, r)
 	fmt.Fprintf(w, "[Header]\n")
 	renderHeaders(w, r)
 	fmt.Fprintf(w, "[Body]\n")
@@ -20,7 +20,7 @@ func renderFullyRequestDetails(w http.ResponseWriter, r *http.Request) {
 }
 
 func renderRequestMethod(w http.ResponseWriter, r *http.Request) {
-        fmt.Fprintf(w, "%s\n", r.Method)
+	fmt.Fprintf(w, "%s\n", r.Method)
 }
 
 func renderHeaders(w http.ResponseWriter, r *http.Request) {
