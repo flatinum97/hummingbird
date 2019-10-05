@@ -17,12 +17,12 @@ func RegisterAPIEndpoints() {
 
 // Run starts up a HTTP server
 func Run() {
-	_, err := strconv.Atoi(config.Port)
+	_, err := strconv.Atoi(ServerConfig.Port)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	err = http.ListenAndServe(":"+config.Port, nil)
+	err = http.ListenAndServe(":"+ServerConfig.Port, nil)
 	if err != nil {
 		log.Fatal(err)
 	}

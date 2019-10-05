@@ -5,10 +5,10 @@ type Config struct {
 	Port string
 }
 
-var config Config
+var ServerConfig Config
 
 func init() {
-	config = setDefaultConfig()
+	ServerConfig = setDefaultConfig()
 }
 
 func setDefaultConfig() Config {
