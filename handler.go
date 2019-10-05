@@ -9,12 +9,18 @@ import (
 )
 
 func renderFullyRequestDetails(w http.ResponseWriter, r *http.Request) {
+        fmt.Fprintf(w, "[Method]\n")
+        renderRequestMethod(w, r)
 	fmt.Fprintf(w, "[Header]\n")
 	renderHeaders(w, r)
 	fmt.Fprintf(w, "[Body]\n")
 	renderBody(w, r)
 	fmt.Fprintf(w, "[Remote address]\n")
 	renderRemoteAddr(w, r)
+}
+
+func renderRequestMethod(w http.ResponseWriter, r *http.Request) {
+        fmt.Fprintf(w, "%s\n", r.Method)
 }
 
 func renderHeaders(w http.ResponseWriter, r *http.Request) {
